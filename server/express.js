@@ -16,4 +16,10 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
+app.get("*", (req, res) => {
+    res.status(200).send({
+        message: "This is Ciat"
+    });
+});
+
 export default app;
