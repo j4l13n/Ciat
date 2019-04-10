@@ -33,6 +33,9 @@
     "mocha": "^6.1.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-stage-2": "^6.24.1",
     "nodemon": "^1.18.11"
   }
 }
