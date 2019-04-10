@@ -8,3 +8,5 @@ const config = {
         (process.env.PORT || '27017') +
         '/ciatdb'
 }
+
+export default config;
