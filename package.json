@@ -4,8 +4,8 @@
   "description": "This is the project for ciat company",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --require babel-register test/*.test.js --exit",
-    "server": "nodemon app.js --exec babel-node --"
+    "test": "mocha --require babel-register server/test/*.test.js --exit",
+    "server": "nodemon server/app.js --exec babel-node --"
   },
   "repository": {
     "type": "git",
