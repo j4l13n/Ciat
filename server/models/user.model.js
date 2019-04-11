@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
+import crypto from 'crypto'
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -23,9 +24,15 @@ const UserSchema = new mongoose.Schema({
         required: 'Password is required'
     },
     salt: String,
-    role: String,
-    isAdmin: Boolean
-});
+    role: {
+        type: String,
+        default: "employee"
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
+})
 
 UserSchema
     .virtual('password')
@@ -36,7 +43,16 @@ UserSchema
     })
     .get(function() {
         return this._password
-    });
+    })
+
+UserSchema.path('hashed_password').validate(function(v) {
+        if (this._password && this._password.length < 6) {
+            this.invalidate('password', 'Password must be at least 6 characters.')
+        }
+        if (this.isNew && !this._password) {
+            this.invalidate('password', 'Password is required')
+        }
+}, null)
 
 UserSchema.methods = {
     authenticate: function(plainText) {
@@ -56,15 +72,6 @@ UserSchema.methods = {
     makeSalt: function() {
         return Math.round((new Date().valueOf() * Math.random())) + ''
     }
-};
+}
 
-UserSchema.path('hashed_password').validate(function(v) {
-    if (this._password && this._password.length < 6) {
-        this.invalidate('password', 'Password must be at least 6 characters.')
-    }
-    if (this.isNew && !this._password) {
-        this.invalidate('password', 'Password is required')
-    }
-}, null);
-
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('User', UserSchema)
