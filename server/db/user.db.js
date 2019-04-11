@@ -4,6 +4,7 @@ const user = {
     email: "juliushirwa@gmail.com",
     password: "Regedit56",
     createOn: Date.now(),
+    role: "manager", // manager, employee
     isAdmin: false
 };
 

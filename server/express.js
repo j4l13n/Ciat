@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import compress from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
+import userRoutes from './routes/user.route';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use(compress());
 app.use(helmet());
 app.use(cors());
+app.use('/', userRoutes);
 
 app.get("*", (req, res) => {
     res.status(200).send({
