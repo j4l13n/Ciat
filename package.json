@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc --reporter=text mocha --require babel-register server/test/*.test.js --exit",
     "server": "nodemon server/app.js --exec babel-node --",
-    "client": "cd client && npm start"
+    "client": "cd light-bootstrap-dashboard-react-html-v1.2.0/ && npm run start-js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,10 @@
     "express-jwt": "^5.3.1",
     "helmet": "^3.16.0",
     "jsonwebtoken": "^8.5.1",
+    "jss-nested": "^6.0.1",
     "lodash": "^4.17.11",
+    "material-ui": "^1.0.0-beta.43",
+    "material-ui-icons": "^1.0.0-beta.36",
     "mocha": "^6.1.2",
     "mongoose": "^5.5.0"
   },
