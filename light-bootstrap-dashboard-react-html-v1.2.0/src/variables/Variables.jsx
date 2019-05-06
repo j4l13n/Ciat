@@ -247,14 +247,24 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["ID", "Name", "Salary", "Country", "City"];
+const thArray = ["ID", "Name", "Email", "Country", "Role", "Action"];
 const tdArray = [
-  ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-  ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-  ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-  ["4", "Philip Chaney", "$38,735", "Korea, South", "Overland Park"],
-  ["5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
-  ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+  ["1", "Dakota Rice", "juliushirwa@gmail.com", "Rwanda", "Admin", "update"],
+  ["2", "Minerva Hooper", "juliushirwa@gmail.com", "Rwanda", "workers", "update"],
+  ["3", "Sage Rodriguez", "juliushirwa@gmail.com", "Rwanda", "workers", "update"],
+  ["4", "Philip Chaney", "juliushirwa@gmail.com", "Rwanda", "workers", "update"],
+  ["5", "Doris Greene", "juliushirwa@gmail.com", "Rwanda", "workers", "update"],
+  ["6", "Mason Porter", "juliushirwa@gmail.com", "Rwanda", "workers", "update"]
+];
+
+const thMember = ["ID", "Name", "Email", "Phone number", "Action"];
+const tdMember = [
+  ["1", "Dakota Rice", "juliushirwa@gmail.com", "0782061714", "update"],
+  ["2", "Minerva Hooper", "juliushirwa@gmail.com", "0782061714", "update"],
+  ["3", "Sage Rodriguez", "juliushirwa@gmail.com", "0782061714", "update"],
+  ["4", "Philip Chaney", "juliushirwa@gmail.com", "0782061714", "update"],
+  ["5", "Doris Greene", "juliushirwa@gmail.com", "0782061714", "update"],
+  ["6", "Mason Porter", "juliushirwa@gmail.com", "0782061714", "update"]
 ];
 
 //
@@ -589,6 +599,8 @@ module.exports = {
   dataSales,
   optionsSales,
   responsiveSales,
+  thMember,
+  tdMember,
   legendSales,
   dataBar,
   optionsBar,
